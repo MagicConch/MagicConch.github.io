@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>移动监控项目概况 | Magic_Conch</title>
+    <title>移动监控项目-------day1 | Magic_Conch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Magic_Conch">
     
-    <meta name="description" content="最近找老师要到了一个项目，大体的内容是将摄像头中的影像投射到移动端。虽然说起来很简单，但是里面还是有很多可以细细思考的点。
-局域网内在局域网内实现这个功能应该是不太难的，虽然我不会，在最初阶段我的任务就是将电脑摄像头中的影响投射到手机上面。从技术层面上来说，这个看似简单的任务实现起来是很有难度的，因">
+    <meta name="description" content="想要去实现某个功能，首先我们得需要知道那个功能实现的样子是什么样子的，我找到了一款比较合适的软件能够实现想要的功能。我找了一款叫做向日葵的软件，通过在pc上提供一个远程访问码可以访问电脑摄像头，实现监控效果。效果如下（请自行忽略电脑渣渣像素）：这个功能的原理可能类似于远程控制，我尝试着在网络上找一点">
     
     
     
@@ -66,15 +65,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/15/移动监控项目概况/" title="移动监控项目概况" itemprop="url">移动监控项目概况</a>
+      <a href="/2015/09/15/移动监控项目-------day1/" title="移动监控项目-------day1" itemprop="url">移动监控项目-------day1</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="Magic_Conch">Magic_Conch</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-08-15T06:13:39.000Z" itemprop="datePublished">2015-08-15</time>
-    更新日期:<time datetime="2015-09-15T07:54:02.963Z" itemprop="dateModified">2015-09-15</time>
+    <time datetime="2015-09-15T07:00:39.000Z" itemprop="datePublished">2015-09-15</time>
+    更新日期:<time datetime="2015-09-16T12:43:06.363Z" itemprop="dateModified">2015-09-16</time>
     
   </p>
 </header>
@@ -83,13 +82,13 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">局域网内</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">外网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">附</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">百度百科ip摄像头概念</span></a></li></ol>
 		</div>
 		
-		<p>最近找老师要到了一个项目，大体的内容是将摄像头中的影像投射到移动端。虽然说起来很简单，但是里面还是有很多可以细细思考的点。</p>
-<p></p><h2>局域网内</h2><br>在局域网内实现这个功能应该是不太难的，虽然我不会，在最初阶段我的任务就是将电脑摄像头中的影响投射到手机上面。<br>从技术层面上来说，这个看似简单的任务实现起来是很有难度的，因为我不能直接从网上下载一个相关的安卓软件和电脑进行匹配，我要做的是自己重新用代码来实现这个软件，而且这个方面的东西是我之前并没有接触过的.<br>后期在这方面还可能会有一些拓展，可能会多台摄像头适配切换，多屏显示问题，要优化的地方很多。很感谢老师给了我完全的自主性（- -其实就是不管我，让我自己做），我能够自己规划项目进度.<br>后来我发现电脑摄像头并没有IP地址，于是我决定通过手机来实现模拟ip摄像头来实现功能，不过应该过不了多久淘宝的摄像头就应该到货了，到时候应该不会再这么凄惨~<p></p>
-<p></p><h2>外网</h2><br>如果要加上外网的话，这项工作便会变得繁杂起来，需要从服务器中获取视频信息，还要想着怎样优化显示效果，好难~后期得要点助手过来帮我写(⊙o⊙)…<p></p>
-<p></p><h2>附</h2><br>因为厂商的需求还没有订好，因此我还不太清楚具体的需求是什么，暂时就按照想象中的弄一个demo出来去糊弄人家。项目概况会在以后持续更新~！<p></p>
+		<p>想要去实现某个功能，首先我们得需要知道那个功能实现的样子是什么样子的，我找到了一款比较合适的软件能够实现想要的功能。<br>我找了一款叫做向日葵的软件，通过在pc上提供一个远程访问码可以访问电脑摄像头，实现监控效果。效果如下（请自行忽略电脑渣渣像素）：<br><img src="http://i3.tietuku.com/e83c09f482d6c490.jpg" alt="电脑摄像头"><br>这个功能的原理可能类似于远程控制，我尝试着在网络上找一点相关源码，但最终却没有找到合适的代码，因为我们最后操作的对象是ip摄像头并不是电脑，因此我决定将手机模拟成ip摄像头来继续项目。</p>
+<p></p><h1>百度百科ip摄像头概念</h1><br>IP摄像机一般指的就是网络摄像机，它包括一个普通摄像机、视频服务器、网卡、应用软件等，有的还包括云台和变倍镜头。它可以把图像压缩通过网络进行传输等。。。。 网络摄象机（传输数字信号）是为你让监控信号实施网络传输，普通的摄象机传输模拟信号。仔细想一想加一个编码器的话，普通摄象机也可用啊。这个过程，就和拨号上网用“猫”一样的。网络摄象机传给主机和控制电脑的是数字信号，普通的是模拟信号。就像电话线传输的是模拟信号，加“猫”就可以转换成数字信号，因为电脑只识别数字信号。<br>通过IP摄像头专业版,您可以快速、轻松地从任何地方通过wi - fi和3 g连接查看您摄像头捕捉到的内容。不用担心你不在家的时候家里会不会出现什么问题。无论你是晚上在办公室加班或出门度假,IP摄像头专业版都能让你保持对你所关注的事物的监视！<a href="http://i3.tietuku.com/e83c09f482d6c490.jpg" target="_blank" rel="external">1</a><br>从云端照看你的房子，管理你的家庭网络地址！<p></p>
+<p>我从应用商店里面下载了一个ip摄像头软件，这样就可以把手机变成一个ip摄像头了。之后我再继续尝试用ip地址来访问摄像头。</p>
+<p>卧槽，任重而道远，不过话说好像那些网络摄像头都应该配置好相关的软件的。<br>今天就到这里吧~似乎已经找到解决方案了，明天再说~23333</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -104,7 +103,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/08/15/移动监控项目概况/" data-title="移动监控项目概况 | Magic_Conch" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/09/15/移动监控项目-------day1/" data-title="移动监控项目-------day1 | Magic_Conch" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -114,18 +113,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/08/15/移动监控项目-------day1/" title="移动监控项目-------day1">
+ <a href="/2015/09/15/A Summer Affair：A Novel-------PART1/" title="A Summer Affair：A Novel-------PART1">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  移动监控项目-------day1</span>
+  A Summer Affair：A Novel-------PART1</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/08/13/盒模型/"  title="盒模型">
+<a href="/2015/09/15/移动监控项目概况/"  title="移动监控项目概况">
  <strong>NEXT:</strong><br/> 
- <span>盒模型
+ <span>移动监控项目概况
 </span>
 </a>
 </div>
@@ -153,7 +152,7 @@
 		
 			<li><a href="/tags/HTML/" title="HTML">HTML<sup>2</sup></a></li>
 		
-			<li><a href="/tags/英文小说鉴赏/" title="英文小说鉴赏">英文小说鉴赏<sup>1</sup></a></li>
+			<li><a href="/tags/英文小说鉴赏/" title="英文小说鉴赏">英文小说鉴赏<sup>2</sup></a></li>
 		
 			<li><a href="/tags/项目/" title="项目">项目<sup>2</sup></a></li>
 		
@@ -164,7 +163,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">歸檔</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li></ul>
   </div>
 
 
