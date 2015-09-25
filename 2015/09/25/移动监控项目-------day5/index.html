@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>移动监控项目-------day3 | Magic_Conch</title>
+  <title>移动监控项目-------day5 | Magic_Conch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="找到了一些相关资源，实际上，我的任务就是实现用JMF来实现视频聊天。今天先了解与学习一下JMF吧。源码的下载和分析留给明天做。Java开发视频聊天源码JMF视频聊天源码基于JMF的视频传输源码使用JMF实现视频聊天基于JMF远程视频监控系统的设计与实现移动视频监控系统设计基于JMF的远程监控技术的实现基于JMF的视频实时传输系统的研究与实现">
+  <meta name="description" content="之前我是这样说的，我不会就这样轻易地go die~实际上，之前我一直弄不好的原因是jdk的版本问题，jmf这个古老的东西已经不支持64位的jdk了，可由于种种原因，我还不得不去用这个古老的东西，所以我重新下载了32位的jdk和Eclipse，然后发现一切果然都能够正常运行了，顺便说一下Eclipse中关于jmf的环境配置：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动监控项目-------day3">
-<meta property="og:url" content="http://yoursite.com/2015/09/20/移动监控项目-------day3/index.html">
+<meta property="og:title" content="移动监控项目-------day5">
+<meta property="og:url" content="http://yoursite.com/2015/09/25/移动监控项目-------day5/index.html">
 <meta property="og:site_name" content="Magic_Conch">
-<meta property="og:description" content="找到了一些相关资源，实际上，我的任务就是实现用JMF来实现视频聊天。今天先了解与学习一下JMF吧。源码的下载和分析留给明天做。Java开发视频聊天源码JMF视频聊天源码基于JMF的视频传输源码使用JMF实现视频聊天基于JMF远程视频监控系统的设计与实现移动视频监控系统设计基于JMF的远程监控技术的实现基于JMF的视频实时传输系统的研究与实现">
-<meta property="og:updated_time" content="2015-09-20T04:40:50.318Z">
+<meta property="og:description" content="之前我是这样说的，我不会就这样轻易地go die~实际上，之前我一直弄不好的原因是jdk的版本问题，jmf这个古老的东西已经不支持64位的jdk了，可由于种种原因，我还不得不去用这个古老的东西，所以我重新下载了32位的jdk和Eclipse，然后发现一切果然都能够正常运行了，顺便说一下Eclipse中关于jmf的环境配置：">
+<meta property="og:updated_time" content="2015-09-25T08:39:58.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动监控项目-------day3">
-<meta name="twitter:description" content="找到了一些相关资源，实际上，我的任务就是实现用JMF来实现视频聊天。今天先了解与学习一下JMF吧。源码的下载和分析留给明天做。Java开发视频聊天源码JMF视频聊天源码基于JMF的视频传输源码使用JMF实现视频聊天基于JMF远程视频监控系统的设计与实现移动视频监控系统设计基于JMF的远程监控技术的实现基于JMF的视频实时传输系统的研究与实现">
+<meta name="twitter:title" content="移动监控项目-------day5">
+<meta name="twitter:description" content="之前我是这样说的，我不会就这样轻易地go die~实际上，之前我一直弄不好的原因是jdk的版本问题，jmf这个古老的东西已经不支持64位的jdk了，可由于种种原因，我还不得不去用这个古老的东西，所以我重新下载了32位的jdk和Eclipse，然后发现一切果然都能够正常运行了，顺便说一下Eclipse中关于jmf的环境配置：">
   
     <link rel="alternative" href="/atom.xml" title="Magic_Conch" type="application/atom+xml">
   
@@ -175,11 +175,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="[page]-移动监控项目-------day3" class="article article-type-[page]" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="[page]-移动监控项目-------day5" class="article article-type-[page]" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/20/移动监控项目-------day3/" class="article-date">
-  	<time datetime="2015-09-20T04:33:39.000Z" itemprop="datePublished">2015-09-20</time>
+      <a href="/2015/09/25/移动监控项目-------day5/" class="article-date">
+  	<time datetime="2015-09-25T08:37:39.000Z" itemprop="datePublished">2015-09-25</time>
 </a>
     </div>
   
@@ -192,7 +192,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      移动监控项目-------day3
+      移动监控项目-------day5
     </h1>
   
 
@@ -212,8 +212,89 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>找到了一些相关资源，实际上，我的任务就是实现用JMF来实现视频聊天。<br>今天先了解与学习一下JMF吧。源码的下载和分析留给明天做。<br><a href="http://blog.sina.com.cn/s/blog_67480ec50100lmn0.html" target="_blank" rel="external">Java开发视频聊天源码</a><br><a href="http://www.codeforge.cn/s/0/jmf-%E7%BB%84%E6%92%AD" target="_blank" rel="external">JMF视频聊天源码</a><br><a href="http://www.codeforge.cn/article/232483" target="_blank" rel="external">基于JMF的视频传输源码</a><br><a href="http://www.codeforge.cn/article/227844" target="_blank" rel="external">使用JMF实现视频聊天</a><br><a href="http://www.doc88.com/p-9059093434794.html" target="_blank" rel="external">基于JMF远程视频监控系统的设计与实现</a><br><a href="http://www.cqvip.com/read/read.aspx?id=31335936#" target="_blank" rel="external">移动视频监控系统设计</a><br><a href="http://wenku.it168.com/d_001182467.shtml" target="_blank" rel="external">基于JMF的远程监控技术的实现</a><br><a href="http://wenku.it168.com/d_001182466.shtml" target="_blank" rel="external">基于JMF的视频实时传输系统的研究与实现</a></p>
+        <p>之前我是这样说的，我不会就这样轻易地go die~<br>实际上，之前我一直弄不好的原因是jdk的版本问题，jmf这个古老的东西已经不支持64位的jdk了，可由于种种原因，我还不得不去用这个古老的东西，所以我重新下载了32位的jdk和Eclipse，然后发现一切果然都能够正常运行了，顺便说一下Eclipse中关于jmf的环境配置：<br><a id="more"></a><br>eclipse用的不是系统设置的classpath，需要在eclipse里为工程设置。工程-右键-Build Path-Configure Build Path，选择Liberties，用add jars或add external jars添加jar到工程的classpath。</p>
+<p>然后打开摄像头，运行代码，就可以看到摄像头内所显示的信息了。</p>
+<pre><code><span class="preprocessor"><span class="keyword">import</span> java.awt.BorderLayout;</span> 
+<span class="preprocessor"><span class="keyword">import</span> java.awt.Component;</span> 
+<span class="preprocessor"><span class="keyword">import</span> java.util.Vector;</span>
 
+<span class="preprocessor"><span class="keyword">import</span> javax.media.CaptureDeviceInfo;</span> 
+<span class="preprocessor"><span class="keyword">import</span> javax.media.CaptureDeviceManager;</span> 
+<span class="preprocessor"><span class="keyword">import</span> javax.media.Manager;</span> 
+<span class="preprocessor"><span class="keyword">import</span> javax.media.MediaLocator;</span> 
+<span class="preprocessor"><span class="keyword">import</span> javax.media.Player;</span> 
+<span class="preprocessor"><span class="keyword">import</span> javax.swing.JFrame;</span>
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CameraTest</span> <span class="keyword">extends</span> <span class="title">JFrame</span> </span>{ 
+
+<span class="keyword">public</span> CameraTest() throws Exception { 
+<span class="comment">//先启动摄像头，再做后续的初始化窗体，可保证正确显示摄像头 </span>
+initCapture(); 
+
+<span class="comment">//设置窗体的一些属性 </span>
+<span class="keyword">this</span>.setTitle(<span class="string">"CaptureTest"</span>); 
+<span class="keyword">this</span>.setBounds(<span class="number">500</span>, <span class="number">100</span>, <span class="number">800</span>, <span class="number">500</span>); 
+<span class="keyword">this</span>.setVisible(<span class="literal">true</span>); 
+<span class="keyword">this</span>.setDefaultCloseOperation(EXIT_ON_CLOSE); 
+}
+
+<span class="comment">/** 
+* 初始化摄像头 
+*/</span> 
+<span class="keyword">private</span> <span class="keyword">void</span> initCapture() throws Exception { 
+<span class="comment">//获取所有音频、视频设备 </span>
+Vector&lt;javax.media.CaptureDeviceInfo&gt; deviceList = javax.media.CaptureDeviceManager.getDeviceList(<span class="literal">null</span>);
+
+<span class="comment">//获取视频设备，视频设备以vfw打头 </span>
+CaptureDeviceInfo cameraDevice = <span class="literal">null</span>; 
+<span class="keyword">for</span>(CaptureDeviceInfo cameraDeviceTmp :deviceList){ 
+<span class="keyword">if</span> (cameraDeviceTmp.getName().startsWith(<span class="string">"vfw"</span>)) { 
+cameraDevice = cameraDeviceTmp; 
+<span class="keyword">break</span>; 
+} 
+} 
+
+<span class="keyword">if</span>(cameraDevice == <span class="literal">null</span>){ 
+<span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"找不到摄像头设备"</span>); 
+}
+
+<span class="comment">//创建视频播放器 </span>
+MediaLocator ml = cameraDevice.getLocator(); 
+Player player = Manager.createRealizedPlayer(ml);
+
+<span class="keyword">if</span> (player == <span class="literal">null</span>){ 
+<span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"创建摄像头播放器失败"</span>); 
+} 
+
+<span class="comment">//播放视频 </span>
+player.start(); 
+
+
+<span class="comment">//将播放器加入窗体 </span>
+Component comp = <span class="literal">null</span>; 
+<span class="keyword">if</span> ((comp = player.getVisualComponent()) != <span class="literal">null</span>) 
+add(comp, BorderLayout.CENTER); 
+
+}
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) { 
+<span class="keyword">try</span> {
+
+CameraTest mc = <span class="keyword">new</span> CameraTest(); 
+} <span class="keyword">catch</span> (Exception e) { 
+e.printStackTrace(); 
+} 
+} 
+}
+
+
+
+
+
+
+
+代码是从网上找到的，接下来我的任务应该是尽量理解这些代码，然后实现视频流的传输，这些应该在jmf实现的视频聊天源码中会涉及到。唉，水平堪忧啊，复制粘贴党伤不起。
+</code></pre>
       
     </div>
     
@@ -222,18 +303,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/21/了不起的盖茨比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          了不起的盖茨比
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/19/A Summer Affair：A Novel-------PART4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">A Summer Affair：A Novel-------PART4</div>
+    <a href="/2015/09/25/A Summer Affair：A Novel-------PART5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">A Summer Affair：A Novel-------PART5</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -262,7 +334,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="移动监控项目-------day3" data-title="移动监控项目-------day3" data-url="http://yoursite.com/2015/09/20/移动监控项目-------day3/"></div>
+	<div class="ds-thread" data-thread-key="移动监控项目-------day5" data-title="移动监控项目-------day5" data-url="http://yoursite.com/2015/09/25/移动监控项目-------day5/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
