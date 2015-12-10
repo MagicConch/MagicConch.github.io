@@ -5,17 +5,28 @@
   
   <title>c#文件及数据库相关操作 | Magic_Conch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.">
+  <meta name="description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.
+c#文件操作读文件通过StreamReader来实现
+StreamReader sr = new StreamReader(&quot;路径&quot;,Encoding.Default);
+String line;
+while((line=sr.ReadLi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c#文件及数据库相关操作">
 <meta property="og:url" content="http://yoursite.com/2015/12/10/c#文件及数据库相关操作/index.html">
 <meta property="og:site_name" content="Magic_Conch">
-<meta property="og:description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.">
-<meta property="og:image" content="http://yoursite.com/./images/1449716368357.jpg">
-<meta property="og:updated_time" content="2015-12-10T04:27:43.534Z">
+<meta property="og:description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.
+c#文件操作读文件通过StreamReader来实现
+StreamReader sr = new StreamReader(&quot;路径&quot;,Encoding.Default);
+String line;
+while((line=sr.ReadLi">
+<meta property="og:updated_time" content="2015-12-10T04:40:40.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c#文件及数据库相关操作">
-<meta name="twitter:description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.">
+<meta name="twitter:description" content="这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.
+c#文件操作读文件通过StreamReader来实现
+StreamReader sr = new StreamReader(&quot;路径&quot;,Encoding.Default);
+String line;
+while((line=sr.ReadLi">
   
     <link rel="alternative" href="/atom.xml" title="Magic_Conch" type="application/atom+xml">
   
@@ -213,7 +224,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.<br><a id="more"></a></p>
+        <p>这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.</p>
 <h1 id="c#文件操作">c#文件操作</h1><h3 id="读文件">读文件</h3><p>通过StreamReader来实现</p>
 <pre><code>StreamReader sr = <span class="keyword">new</span> StreamReader(<span class="string">"路径"</span>,Encoding.Default);
 <span class="keyword">String</span> <span class="built_in">line</span>;
@@ -222,7 +233,8 @@
     Console.WriteLine(<span class="built_in">line</span>.ToString());
 }
 sr.Close();
-</code></pre><h3 id="写文件">写文件</h3><p>通过StreamWriter来实现<br>    <img src="./images/1449716368357.jpg" alt="StreamWriter的构造函数" title="1449716368357.jpg"><br>StreamWriter构造函数的第二个参数是是否追加，true表示追加写入文件，false表示不追加写入文件。</p>
+</code></pre><h3 id="写文件">写文件</h3><p>通过StreamWriter来实现</p>
+<p>StreamWriter构造函数的第二个参数是是否追加，true表示追加写入文件，false表示不追加写入文件。</p>
 <pre><code>StreamWriter sw = <span class="keyword">new</span> StreamWriter(<span class="string">"路径"</span>,<span class="keyword">false</span>,Encoding.<span class="keyword">Default</span>);
 sw.<span class="keyword">Write</span>(<span class="string">"写的内容"</span>); 
 sw.<span class="keyword">WriteLine</span>(<span class="string">"写的内容"</span>);
@@ -297,8 +309,7 @@ listBox1.Items.Add(s);
 textBox1.DataBindings.Add(<span class="string">"Text"</span>,dataset,<span class="string">"t1.t_name"</span>);
 </code></pre><h3 id="绑定数据到DataGridView">绑定数据到DataGridView</h3><pre><code>dataGridView1.DataSource = dataset<span class="comment">;</span>
 dataGridView1.DataMember = "t1"<span class="comment">;</span>
-</code></pre><p><a href="magicconch.top">欢迎访问我的主页</a></p>
-
+</code></pre>
       
     </div>
     

@@ -202,7 +202,92 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.<br>
+        <p>这里面涉及到的知识点有c#文件的读写，文件的异或加密，sqlserver数据库的读入以及获取数据到Listbox和DataGridView以及TextBox.</p>
+<h1 id="c#文件操作">c#文件操作</h1><h3 id="读文件">读文件</h3><p>通过StreamReader来实现</p>
+<pre><code>StreamReader sr = <span class="keyword">new</span> StreamReader(<span class="string">"路径"</span>,Encoding.Default);
+<span class="keyword">String</span> <span class="built_in">line</span>;
+<span class="keyword">while</span>((<span class="built_in">line</span>=sr.ReadLine())!=<span class="keyword">null</span>)
+{
+    Console.WriteLine(<span class="built_in">line</span>.ToString());
+}
+sr.Close();
+</code></pre><h3 id="写文件">写文件</h3><p>通过StreamWriter来实现</p>
+<p>StreamWriter构造函数的第二个参数是是否追加，true表示追加写入文件，false表示不追加写入文件。</p>
+<pre><code>StreamWriter sw = <span class="keyword">new</span> StreamWriter(<span class="string">"路径"</span>,<span class="keyword">false</span>,Encoding.<span class="keyword">Default</span>);
+sw.<span class="keyword">Write</span>(<span class="string">"写的内容"</span>); 
+sw.<span class="keyword">WriteLine</span>(<span class="string">"写的内容"</span>);
+sw.Close();
+</code></pre><p>write和writeline的区别在于有没有换行的存在.</p>
+<h3 id="文件异或加密与解密">文件异或加密与解密</h3><p>原理是某个数异或同一个数两次之后，得到的数还是这个数本身。</p>
+<pre><code><span class="built_in">string</span> s = <span class="string">"i wanna see you!"</span>;
+<span class="keyword">char</span>[] ss = s.ToCharArray();<span class="comment">//将s字符串转化为字符数组</span>
+<span class="keyword">char</span> a = <span class="string">'#'</span>;<span class="comment">//加密使用的字符，即秘钥</span>
+<span class="comment">//加密</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.Length; i++)
+    ss[i] = (<span class="keyword">char</span>)(ss[i] ^ a);<span class="comment">//将每一位都根据秘钥进行了异或加密</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.Length; i++)
+    Console.Write(ss[i] + <span class="string">""</span>);<span class="comment">//输出加密结果</span>
+Console.WriteLine();
+<span class="comment">//解密</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.Length; i++)
+    ss[i] = (<span class="keyword">char</span>)(ss[i] ^ a);<span class="comment">//将每一位都根据秘钥进行了异或解密</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.Length; i++)
+    Console.Write(ss[i] + <span class="string">""</span>);
+Console.Read();
+</code></pre><h3 id="例子">例子</h3><p>从A.txt文本文件中按照行读取字符串，进行加密，把加密后的字符串写到B.txt文件中，然后把A.txt文件中的内容删除，读出B.txt中的加密字符串，并解密，把解密的字符串回写到A.txt中</p>
+<pre><code>StreamReader sr = <span class="keyword">new</span> StreamReader(<span class="string">"A.txt"</span>,Encoding.<span class="keyword">Default</span>);<span class="comment">//放在debug目录下不需要写其余路径</span>
+string s=sr.ReadToEnd();
+sr.Close();    
+<span class="comment">//加密</span>
+<span class="keyword">char</span> a = <span class="string">'#'</span>;
+<span class="keyword">char</span>[] ss = s.ToCharArray();
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.Length; i++)
+    ss[i] = (<span class="keyword">char</span>)(ss[i] ^ a);
+<span class="comment">//写入B.TXT</span>
+StreamWriter sw = <span class="keyword">new</span> StreamWriter(<span class="string">"B.txt"</span>, <span class="keyword">false</span>, Encoding.<span class="keyword">Default</span>);
+sw.<span class="keyword">Write</span>(ss);
+sw.Close();
+<span class="comment">//删除A.txt中的内容</span>
+StreamWriter sw1 = <span class="keyword">new</span> StreamWriter(<span class="string">"A.txt"</span>, <span class="keyword">false</span>, Encoding.<span class="keyword">Default</span>);
+sw1.<span class="keyword">Write</span>(<span class="string">""</span>);<span class="comment">//写入空字符串,相当于删除了原文件内容</span>
+<span class="comment">//因为后面还要写入，这里我们就不关闭了</span>
+<span class="comment">//读出B.txt的内容</span>
+StreamReader sr1 = <span class="keyword">new</span> StreamReader(<span class="string">"B.txt"</span>, Encoding.<span class="keyword">Default</span>);
+string s1 = sr1.ReadToEnd();
+sr1.Close();
+<span class="comment">//解密</span>
+<span class="keyword">char</span>[] ss1 = s1.ToCharArray();
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss1.Length; i++)
+    ss1[i] = (<span class="keyword">char</span>)(ss1[i] ^ a);
+<span class="comment">//写入A.txt</span>
+sw1.<span class="keyword">Write</span>(ss1);
+sw1.Close();
+</code></pre><h1 id="c#连接数据库操作">c#连接数据库操作</h1><ol>
+<li>创建新的数据库连接SqlConnection，并打开数据库</li>
+<li>创建对数据库的操作SqlCommand,连接数据库，写好查询语句</li>
+<li><p>创建DataSet和数据库之间的桥梁SqlDataAdapter并连接好数据库以及DataSet</p>
+<p>//第一步<br>SqlConnection conn = new SqlConnection(“连接字符串”);<br>conn.open();<br>//第二步<br>SqlCommand cmd = new SqlCommand();<br>cmd.Connection = conn;<br>cmd.CommandText = “Select * from student”;<br>//第三步<br>SqlDataAdapter DataAdapter = null;<br>DataSet dataset = null;<br>DataAdapter.SelectCommand = cmd;<br>DataAdapter.Fill(dataset, “t1”);//t1为dataset中的表名</p>
+</li>
+</ol>
+<h3 id="绑定数据到listbox">绑定数据到listbox</h3><pre><code><span class="comment">//获取所有列名</span>
+<span class="built_in">string</span> s=<span class="string">""</span>;
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dataset.Tables[<span class="string">"t1"</span>].Columns.Count; i++)
+    s += dataset.Tables[<span class="string">"t1"</span>].Columns[i].ToString() + <span class="string">"\t"</span>;
+listBox1.Items.Add(s);
+<span class="comment">//获取剩余数据项</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dataset.Tables[<span class="number">0</span>].Rows.Count; i++)
+{
+    DataRow dr = dataset.Tables[<span class="number">0</span>].Rows[i];
+    s = <span class="string">""</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; dataset.Tables[<span class="number">0</span>].Columns.Count; j++)
+        s += dr[j].ToString() + <span class="string">"\t"</span>;
+    listBox1.Items.Add(s);
+}
+</code></pre><h3 id="绑定数据到textBox">绑定数据到textBox</h3><pre><code><span class="comment">//将t1表中的t_name属性绑定到textBox1</span>
+textBox1.DataBindings.Add(<span class="string">"Text"</span>,dataset,<span class="string">"t1.t_name"</span>);
+</code></pre><h3 id="绑定数据到DataGridView">绑定数据到DataGridView</h3><pre><code>dataGridView1.DataSource = dataset<span class="comment">;</span>
+dataGridView1.DataMember = "t1"<span class="comment">;</span>
+</code></pre>
       
     </div>
     
@@ -215,10 +300,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/10/c#文件及数据库相关操作/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
